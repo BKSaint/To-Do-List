@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Noto+Sans+Mono&family=Zilla+Slab&display=swap');
+
+
+#logo {
+    position: relative;
+    top: -30px;
+    width: 100%;
+    transform: scale(.4, .4)
+}
+
+#dis {
+    transform: scale(.7, .7);
+    width: 100%;
+}
+
+#yt {
+    transform: scale(.6, .6);
+    width: 100%;
+    position: relative;
+    top: -20px;
+}
+
+#space {
+    height: 100px;
+    width: 100px;
+}
+
+#fol {
+    width: 50%;
+
+}
+.bg-nav {
+    background-color: black;
+}
+
+.btn-wavy {
+    background-color: #4aa8ff;
+}
+
+.btn-wavy:hover {
+    background-color: #1399ff;
+
+}
+
+#bt {
+    font-family: 'Bungee', cursive;  
+
+}
+
+h1 {
+    font-family: 'Bungee', cursive;
+    color: white;
+
+}
+
+.ntxt {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 120%;
+    color: white;
+}
+
+.ntxtd {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 120%;
+    color: black;
+}
+
+
+.media {
+    width: 2rem;
+    height: 2rem;
+    margin: 5px;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    color: white
+}
+
+li {
+    list-style: none;
+}
