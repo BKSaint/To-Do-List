@@ -9,12 +9,16 @@
     <body style=background-color:deepskyblue;>
     
         <h1>To-Do List</h1>
-            <form>
+        {%for todo in todos%}
+            <li>{{todo}}</li>
+        {%endfor%}
+        <form>
                 <textarea name="new_todo">
                 </textarea>
-                <input type="submit">
-            
-            </form>
+                <input type="submit">  
+        </form>
+        <ul>
         
+        </ul>
     </body>
 </html>
