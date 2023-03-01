@@ -4,21 +4,33 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Courgette&family=Josefin+Sans&family=Monoton&family=Oswald&family=Parisienne&family=Raleway&family=Sacramento&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+        <style>
+        body {
+            background-color: lightblue;
+        }
+        textarea {
+            resize: none
+        }
+        </style>
     </head>
 
-    <body style=background-color:deepskyblue;>
+    <body>
     
-        <h1>To-Do List</h1>
-        {%for todo in todos%}
-            <li>{{todo}}</li>
-        {%endfor%}
-        <form>
-                <textarea name="new_todo">
+        <h1 style="text-align: center;">To-Do List Maker</h1>
+        <hr>
+        
+        <form action="/add"
+              method="post">
+                <textarea name="new_todo"
+                          rows="20"
+                          cols="70">
                 </textarea>
-                <input type="submit">  
+                <input type="submit">
         </form>
         <ul>
-        
+            {%for todo in todos%}
+                <li>{{todo}}</li>
+            {%endfor%}
         </ul>
     </body>
 </html>
