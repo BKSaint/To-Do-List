@@ -17,7 +17,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     cursor = connection.cursor()
-    cursor.execute("SELECT * FROM `Todo_Database`")
+    cursor.execute("SELECT * FROM `Todo_Database` ORDER BY `Completed` DESC")
     results = cursor.fetchall()
     
     return render_template("todo.html.jinja", 
@@ -28,5 +28,5 @@ def index():
 def add():
     new_todo = request.form['new_todo']
     cursor = connection.cursor()
-    cursor.execute(f"INSERT INTO `Todo_Database` (`ID`, `Description`) VALUES (NULL, '{new_todo}');")
+    cursor.execute(f"INSERT INTO `Todo_Database` (`Description`) VALUES ('{new_todo}');")
     return redirect("/")

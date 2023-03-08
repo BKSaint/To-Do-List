@@ -1,1 +1,1 @@
-cursor.execute(f"INSERT INTO `Todo_Database` (`ID`, `Description`) VALUES (NULL, '{new_todo}')")
+style="{% if todo['complete'] = 1 %} color: red {%endif%}"
