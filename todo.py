@@ -27,6 +27,17 @@ def index():
 @app.route("/add", methods=['POST'])
 def add():
     new_todo = request.form['new_todo']
+    
     cursor = connection.cursor()
     cursor.execute(f"INSERT INTO `Todo_Database` (`Description`) VALUES ('{new_todo}');")
+
+    return redirect("/")
+
+@app.route("/complete", methods=["POST"])
+def complete():
+    todo_id = request.form['todo_id']
+    
+    cursor = connection.cursor()
+    cursor.execute(f"UPDATE `Todo_Database` SET `Completed` = 1 WHERE `ID` = {todo_id}")
+    
     return redirect("/")
