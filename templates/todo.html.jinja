@@ -12,9 +12,22 @@
             font-family: 'Dancing Script', cursive;
         }
         #items {
+            width: 60%;
+            word-wrap: break-word;
+            margin-left: 9%;
+            margin-top: 20%;
             font-family: 'Dancing Script', cursive;
-            font-size: 40px
+            font-size: 1rem;
+        }  
+        #quill {
+            width:200px; 
+            height:200px; 
+            transform:scaleX(-1); 
         }
+
+        .rel {position: relative;}
+        .abs {position: absolute;}
+
         textarea {
             resize: none
         }
@@ -25,10 +38,11 @@
             color: black;
             font-size:60px
         }
+
         </style>
     </head>
 
-    <body style="background-image: url('https://th.bing.com/th/id/R.0f0dc7be708237e784b515fd92015992?rik=KKGCVgl5R5%2bXpg&riu=http%3a%2f%2fwww.medievalarchives.com%2fwp-content%2fuploads%2f2011%2f12%2fOld-Parchment.jpg&ehk=y138VD2V4Y8ud4RuYjlSSgFmXok2e03oyA8k0YuHwb4%3d&risl=&pid=ImgRaw&r=0');
+    <body style="background-image: url('https://th.bing.com/th/id/R.fcbaec7b0dd372dfbb4d17f990881383?rik=jRp7hyz3DDsmIg&pid=ImgRaw&r=0');
                 background-repeat: no-repeat, repeat;
                 background-size:cover">
     
@@ -49,20 +63,33 @@
                         <input type="submit">
                 </form>
             </div>
-            <div class="col">
-            <div id="items">
-                <ul>
-                    {%for todo in todos%}
-                        <li style="color: black; {% if todo['Completed'] == 1 %} color: black; text-decoration: line-through; {%endif%}">{{todo['Description']}}</li>
-                        <form action="/complete" method="post">
-                            <input name="todo_id" value="{{todo['ID']}}" hidden>
-                            <input style="font-size:20px; background-color:blanchedalmond" type="submit" value="Completed">
-                        
-                        </form>
-                    {%endfor%}
-                </ul>
+            <div style="background-image: url('https://www.pngall.com/wp-content/uploads/2016/07/Scroll-PNG.png'); background-repeat:no-repeat, repeat;"
+                 class="col">
+                <div class="rel">
+                    <div class="abs" style="z-index: 2">
+                        <img id="quill" src="https://th.bing.com/th/id/R.51d56934a795cbfb2f70ce9b40131deb?rik=Zn3mrOZhW0Qpvg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fGze%2fKTjGzegTq.png&ehk=CYiOSzUAuuPo6ZXNNEPeJ4XG53u7CVcsga59JaQgHX0%3d&risl=&pid=ImgRaw&r=0"/>
+                    </div>
+
+                    <div class="abs" style="z-index: 1">
+                        <div id="items">
+                            <ul>
+                            {%for todo in todos%}
+                                <li style="color: black; {% if todo['Completed'] == 1 %} color: black; text-decoration: line-through; {%endif%}">{{todo['Description']}}</li>
+                                {% if todo['Completed'] == 0 %}
+                                <form action="/complete" method="post">
+
+                                    <input name="todo_id" value="{{todo['ID']}}" hidden>
+                                    <input style="font-size:20px; background-color:blanchedalmond" type="submit" value="Completed">
+
+                                </form>
+                                {%endif%}
+                                
+                            {%endfor%}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-        
+        </div>
     </body>
 </html>
