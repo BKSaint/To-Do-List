@@ -12,16 +12,15 @@
             font-family: 'Dancing Script', cursive;
         }
         #items {
-            width: 60%;
+            width: 70%;
             word-wrap: break-word;
-            margin-left: 9%;
-            margin-top: 20%;
+            margin-top: 10%;
             font-family: 'Dancing Script', cursive;
-            font-size: 1rem;
+            font-size: 2rem;
         }  
         #quill {
-            width:200px; 
-            height:200px; 
+            width: 15%; 
+            height: 100%; 
             transform:scaleX(-1); 
         }
 
@@ -42,7 +41,7 @@
         </style>
     </head>
 
-    <body style="background-image: url('https://th.bing.com/th/id/R.fcbaec7b0dd372dfbb4d17f990881383?rik=jRp7hyz3DDsmIg&pid=ImgRaw&r=0');
+    <body style="background-image: url('https://th.bing.com/th/id/R.0f0dc7be708237e784b515fd92015992?rik=KKGCVgl5R5%2bXpg&riu=http%3a%2f%2fwww.medievalarchives.com%2fwp-content%2fuploads%2f2011%2f12%2fOld-Parchment.jpg&ehk=y138VD2V4Y8ud4RuYjlSSgFmXok2e03oyA8k0YuHwb4%3d&risl=&pid=ImgRaw&r=0');
                 background-repeat: no-repeat, repeat;
                 background-size:cover">
     
@@ -50,8 +49,9 @@
     <div class="container">
         <div class="row">
             <div class="col">
-            <div></div>
-            <h1 style>To-Do List Maker</h1>       
+                <div class="row">
+                    <h1>To-Do List Maker<img id="quill" src="https://th.bing.com/th/id/R.51d56934a795cbfb2f70ce9b40131deb?rik=Zn3mrOZhW0Qpvg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fGze%2fKTjGzegTq.png&ehk=CYiOSzUAuuPo6ZXNNEPeJ4XG53u7CVcsga59JaQgHX0%3d&risl=&pid=ImgRaw&r=0"/></h1>     
+                </div>   
                 <form action="/add"
                     method="post">
                         <textarea 
@@ -63,14 +63,7 @@
                         <input type="submit">
                 </form>
             </div>
-            <div style="background-image: url('https://www.pngall.com/wp-content/uploads/2016/07/Scroll-PNG.png'); background-repeat:no-repeat, repeat;"
-                 class="col">
-                <div class="rel">
-                    <div class="abs" style="z-index: 2">
-                        <img id="quill" src="https://th.bing.com/th/id/R.51d56934a795cbfb2f70ce9b40131deb?rik=Zn3mrOZhW0Qpvg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fGze%2fKTjGzegTq.png&ehk=CYiOSzUAuuPo6ZXNNEPeJ4XG53u7CVcsga59JaQgHX0%3d&risl=&pid=ImgRaw&r=0"/>
-                    </div>
-
-                    <div class="abs" style="z-index: 1">
+            <div class="col">
                         <div id="items">
                             <ul>
                             {%for todo in todos%}
@@ -90,6 +83,5 @@
                     </div>
                 </div>
             </div>
-        </div>
     </body>
 </html>
